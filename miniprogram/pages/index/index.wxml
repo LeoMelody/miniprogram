@@ -1,0 +1,3 @@
+<view>
+  <button bindtap="goUpload">点我一下上传个图片唉</button>
+</view> 

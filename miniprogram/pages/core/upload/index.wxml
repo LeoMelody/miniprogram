@@ -1,0 +1,3 @@
+<!--pages/core/upload/index.wxml-->
+<text>上传个图片嘛</text>
+<button bindtap="chooseImg">上传</button>
