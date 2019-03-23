@@ -1,7 +1,9 @@
 {
   "pages": [
+    "pages/common/welcome/index",
     "pages/index/index",
-    "pages/core/upload/index"
+    "pages/core/upload/index",
+    "pages/combination/index"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
@@ -9,5 +11,25 @@
     "navigationBarBackgroundColor": "#F6F6F6",
     "navigationBarTitleText": "试一下又不掏钱",
     "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#a9b7b7",
+    "selectedColor": "#1AAD19",
+    "borderStyle": "white",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "喜欢",
+        "iconPath": "/assets/images/favorite_dis.png",
+        "selectedIconPath": "/assets/images/favorite_choose.png"
+      },
+      {
+        "pagePath": "pages/combination/index",
+        "text": "组合",
+        "iconPath": "/assets/images/combination_dis.png",
+        "selectedIconPath": "/assets/images/combination_choose.png"
+      }
+    ]
   }
 }
