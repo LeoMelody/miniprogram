@@ -14,7 +14,7 @@ page{
   flex: 1;
   display: flex;
   flex-direction: column;
-  background: #69C3AA;
+  background: rgb(205, 231, 224);
   align-items: stretch;
   padding: 0;
   height: 100%;
@@ -94,6 +94,37 @@ page{
   height: 200rpx;
   transition: all .35s ease;
 }
+
+.hd-text, .head-text {
+  text-align: center;
+  font-size: 36rpx;
+  position: relative;
+  z-index: 9999;
+  color: #666;
+}
+
+.head-text {
+  height: 90rpx;
+  line-height: 90rpx;
+  transform: translateY(-200rpx);
+  animation: drop 1s ease 1s forwards;
+}
+
+@keyframes drop {
+  0% {
+    transform: translateY(-200rpx);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.hd-text {
+  height: 300rpx;
+  line-height: 300rpx;
+}
+
 .logo {
   position: absolute;
   z-index: 2;
@@ -102,10 +133,17 @@ page{
   width: 160rpx;
   height: 160rpx;
   margin-left: -80rpx;
-  border-radius: 160rpx;
+  border-radius: 50%;
   animation: sway 10s ease-in-out infinite;
   opacity: .95;
+  overflow: hidden;
 }
+
+.logo-img {
+  width: 120rpx;
+  height: 120rpx;
+}
+
 @keyframes sway{
   0% {transform: translate3d(0,20rpx,0) rotate(-15deg); }
   17% {transform: translate3d(0,0rpx,0) rotate(25deg); }
@@ -160,7 +198,7 @@ page{
   color: #fff;
   text-align: center;
   border-radius: 100rpx;
-  margin: 40% 20%;
+  margin: 0 20%;
 }
 .confirm-btn:active {
   opacity: .8;
@@ -176,4 +214,11 @@ page{
   right: 0;
   padding: 30rpx;
   text-align: center;
+}
+
+.down-time {
+  text-align: center;
+  font-size: 24rpx;
+  line-height: 42rpx;
+  color: #888;
 }

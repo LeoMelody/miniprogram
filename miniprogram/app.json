@@ -3,7 +3,8 @@
     "pages/common/welcome/index",
     "pages/index/index",
     "pages/core/upload/index",
-    "pages/combination/index"
+    "pages/combination/index",
+    "pages/classification/index"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
@@ -23,6 +24,12 @@
         "text": "喜欢",
         "iconPath": "/assets/images/favorite_dis.png",
         "selectedIconPath": "/assets/images/favorite_choose.png"
+      },
+      {
+        "pagePath": "pages/classification/index",
+        "text": "分类",
+        "iconPath": "/assets/images/classification_dis.png",
+        "selectedIconPath": "/assets/images/classification_choose.png"
       },
       {
         "pagePath": "pages/combination/index",

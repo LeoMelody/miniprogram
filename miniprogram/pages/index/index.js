@@ -1,22 +1,46 @@
 //index.js
-const app = getApp()
+const app = getApp();
+import SPage from '../../util/minxin.js'
+import regeneratorRuntime from '../../libs/runtime.js'
 
-Page({
+SPage({
   data: {
     avatarUrl: './user-unlogin.png',
     userInfo: {},
     logged: false,
     takeSession: false,
-    requestResult: ''
+    requestResult: '',
+    collapse: false,
+    collapseTimer: null
   },
 
-  onLoad: function() {
-    
-  },
-
-  goUpload() {
-    wx.navigateTo({
-      url: '/pages/core/upload/index',
+  clickButton() {
+    // clearTimeout(this.collapseTimer)
+    let collapse = this.data.collapse
+    this.setData({
+      collapse: !collapse
     })
+    // TODO 是否加上自动关闭呢？
+    // if (!collapse) {
+    //   this.collapseTimer = setTimeout(() => {
+    //     this.setData({
+    //       collapse: false
+    //     })
+    //   }, 3000)
+    // }
+  },
+
+  /**
+   * 添加组合
+   */
+  addCombinations() {
+    console.log('addCombinations')
+  },
+
+  /**
+   * 添加衣服
+   */
+  addClothes() {
+    console.log('addClothes')
   }
 })

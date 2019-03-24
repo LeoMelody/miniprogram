@@ -1,60 +1,86 @@
 //login.js
 //获取应用实例
-var app = getApp();
-Page({
+const app = getApp();
+import SPage from '../../../util/minxin.js'
+import regeneratorRuntime from '../../../libs/runtime.js'
+
+SPage({
   data: {
     remind: '加载中',
     angle: 0,
-    userInfo: {}
+    userInfo: {},
+    downTime: 4,
+    auth: false,
+    downTimer: null
   },
-  goToIndex: function() {
-    wx.switchTab({
-      url: '/pages/index/index',
-    });
-  },
-  onLoad: function() {
-    var that = this
-    wx.setNavigationBarTitle({
-      title: wx.getStorageSync('mallName')
-    })
-  },
-  onShow: function() {
-    let that = this
-    let userInfo = wx.getStorageSync('userInfo')
-    if (!userInfo) {
-      wx.getUserInfo({
-        success: res => {
-          app.globalData.userInfo = res.userInfo
-          this.setData({
-            userInfo: res.userInfo,
-          })
-        }
-      })
-    } else {
-      that.setData({
-        userInfo: userInfo
-      })
-    }
-  },
-  onReady: function() {
+  async onReady() {
     var that = this;
+    let auth = await app.checkAuth()
+    this.setData({
+      auth
+    })
+    // loading
     setTimeout(function() {
+      if (auth) {
+        that.downTimeFun()
+      }
       that.setData({
         remind: ''
       });
     }, 1000);
-    wx.onAccelerometerChange(function(res) {
-      var angle = -(res.x * 30).toFixed(1);
-      if (angle > 14) {
-        angle = 14;
-      } else if (angle < -14) {
-        angle = -14;
+  },
+  async onGetUserInfo(e) {
+    if (!e || !e.detail || !e.detail.iv || !e.detail.signature || !e.detail.encryptedData) {
+      // 拒绝授权则返回
+      wx.showModal({
+        title: '哼',
+        content: '你怎么点拒绝啊，退出再试一下吧',
+        showCancel: false
+      })
+      return 
+    }
+    
+    await app.refreshUserInfo()
+    clearInterval(this.data.downTimer)
+    this.setData({
+      downTimer: null
+    })
+    let time = 0
+    // 未授权
+    if (!this.data.auth) {
+      time = 1500
+      wx.showToast({
+        title: '开始吧！',
+        icon: 'none',
+        duration: 1500
+      })
+    }
+    setTimeout(()=> {
+      wx.switchTab({
+        url: '/pages/index/index',
+      })
+    }, time)
+  },
+
+  /**
+   * 倒计时方法
+   */
+  downTimeFun() {
+    this.data.downTimer = setInterval(() => {
+      let downTime = this.data.downTime
+      if (downTime <= 0) {
+        clearInterval(this.data.downTimer)
+        this.setData({
+          downTimer: null
+        })
+        wx.switchTab({
+          url: '/pages/index/index',
+        })
+        return 
       }
-      if (that.data.angle !== angle) {
-        that.setData({
-          angle: angle
-        });
-      }
-    });
+      this.setData({
+        downTime: downTime - 1
+      })
+    }, 1000)
   }
 });

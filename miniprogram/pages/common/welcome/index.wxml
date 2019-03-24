@@ -1,17 +1,24 @@
 <!--start.wxml-->
 <view class="container">
+  <view class="head-text">索菲娅小姐姐</view>
   <view class="remind-box" wx:if="{{remind}}">
       <image class="remind-img" src="/assets/images/loading.gif"></image>
   </view>
   <block wx:else>
     <view class="content">
+      <view class="hd-text">
+        送你的小衣橱哦
+      </view>
       <view class="hd" style="transform:rotateZ({{angle}}deg);">
-        <image class="logo" src="{{userInfo.avatarUrl}}"></image>
+        <view class="logo">
+          <open-data class="logo-img" type="userAvatarUrl"></open-data>
+        </view>
         <image class="wave" src="/assets/images/wave.png" mode="aspectFill"></image>
         <image class="wave wave-bg" src="/assets/images/wave.png" mode="aspectFill"></image>
       </view>
       <view class="bd">
-        <button class="confirm-btn">开启小衣橱吧</button>
+        <view wx:if="{{auth}}" class="down-time">{{downTime}}s后开启小衣橱~</view>
+        <button class="confirm-btn" open-type="getUserInfo" bindgetuserinfo="onGetUserInfo">{{auth ? '直接开启' : '开启小衣橱'}}</button>
       </view>
     </view>
   </block>
