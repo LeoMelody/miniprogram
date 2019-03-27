@@ -13,9 +13,11 @@ App({
     }
     this.globalData = {}
     await this.getOpenId()
-    console.log('?')
     if (this.currentPage && typeof this.currentPage.getData === 'function') {
       this.currentPage.getData()
+    }
+    if (await this.checkAuth()) {
+      this.refreshUserInfo()
     }
   },
 
@@ -23,14 +25,18 @@ App({
    * 刷新笨笨信息
    */
   async refreshUserInfo(flag) {
-    let code = await this.userLogin()
     let info = await this.getUserInfo()
-    if (!flag && info.rawData === wx.getStorageSync('rawData')) return
-    let params = {
-      code,
-      ...info
-    } 
+    let rawData = JSON.parse(info.rawData)
+    if (!flag && rawData === wx.getStorageSync('rawData')) return
+    wx.setStorageSync('rawData', rawData)
     // TODO 更新信息 这一块不做过多的考虑，因为只有一个用户
+    let result = await wx.cloud.callFunction({
+      name: 'updateuser',
+      data: {
+        openid: this.globalData.openid,
+        info: rawData
+      }
+    })
   },
   /**
    * 获取授权信息
@@ -107,7 +113,5 @@ App({
   /**
    * 公共数据
    */
-  globalData: {
-
-  }
+  globalData: {}
 })

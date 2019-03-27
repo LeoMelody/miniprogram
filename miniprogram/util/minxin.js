@@ -28,20 +28,11 @@ function baseOptions() {
     onLoad(options) {
       this.data.isLoad = true
       this.data.options = options
-      if (app.globalData && app.globalData.openid) {
-
+      if (!app.globalData || !app.globalData.openid) { // 数据加载完成
+        const page = getCurrentPages()[0]
+        app.currentPage = page
+        return
       }
-      // if (!app.eventFlag && !app.isQueryError) { // 数据加载完成
-      //   const page = getCurrentPages()[0]
-      //   app.currentPage = page
-      //   return
-      // }
-      // if (app.isQueryError) { // 查询User出错，再查询userInfo
-      //   app.getDDUser().then(() => {
-      //     this.getData()
-      //   })
-      //   return
-      // }
       this.getData()
     },
 

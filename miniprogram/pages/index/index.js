@@ -42,5 +42,12 @@ SPage({
    */
   addClothes() {
     console.log('addClothes')
+  },
+
+  /**
+   * 获取数据
+   */
+  getData() {
+
   }
 })
