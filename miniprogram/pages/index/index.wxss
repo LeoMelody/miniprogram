@@ -92,3 +92,48 @@
     opacity: 1;
   }
 }
+
+/* head */
+.swiper {
+  text-align: center;
+  height: 500rpx;
+}
+
+.slide-item {
+  width: 100%;
+  height: 450rpx;
+  line-height: 450rpx;
+  background: rgba(218, 97, 139, .6);
+  border-radius: 10px;
+  position: relative;
+}
+
+.active {
+  transform: none;
+  transition: all 0.2s ease-in 0s;
+} 
+
+.quiet {
+  transform: scale(0.9);
+  transition: all 0.2s ease-in 0s;
+}
+
+.head-img {
+  width: 750rpx;
+  height: 600rpx;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 60%);
+  color: #fff;
+}
+
+.menu {
+  position: absolute;
+  top: 50rpx;
+  left: 20rpx;
+  display: flex;
+  align-items: center;
+}
+
+.menu-icon {
+  width: 50rpx;
+  height: 50rpx;
+}

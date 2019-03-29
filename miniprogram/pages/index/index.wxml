@@ -1,4 +1,9 @@
 <view>
+  <image src="/assets/images/home-bg.jpg" mode="aspectFill" class="head-img">
+  </image>
+  <view class="menu">
+    <image src="/assets/images/home-menu.png" mode="aspectFill" class="menu-icon"></image>
+  </view>
   <!-- 有时间再搞这个移动的 -->
   <!-- <button id="userBtn" type="primary" lang="zh_CN" bindclick="clickButton" bindtouchstart="touchS" bindtouchmove="touchM" bindtouchend="touchE" style="{{'left:' + moveL + 'px;top:' + moveT + 'px;'}}"> -->
   <view class="fixed-area">
@@ -20,5 +25,11 @@
       <view class="add-item rotate-item"></view>
     </button>
   </view>
-
+  <swiper class='swiper' indicator-color='#a39f99' indicator-active-color="#f49641" interval="2000" duration="1000" previous-margin="30px" next-margin="30px" circular bindchange="bindchange">
+    <block wx:for="{{list}}" wx:key="{{index}}">
+      <swiper-item>
+        <view class="slide-item {{swiperIndex === index ? 'active':'quiet'}}">{{item.name}}</view>
+      </swiper-item>
+    </block>
+  </swiper>
 </view>

@@ -11,7 +11,21 @@ SPage({
     takeSession: false,
     requestResult: '',
     collapse: false,
-    collapseTimer: null
+    collapseTimer: null,
+    list: [
+      {
+        name: '春'
+      },
+      {
+        name: '夏'
+      },
+      {
+        name: '秋'
+      },
+      {
+        name: '冬'
+      }
+    ]
   },
 
   clickButton() {
@@ -48,6 +62,13 @@ SPage({
    * 获取数据
    */
   getData() {
+
+  },
+
+  /**
+   * 切换swiper
+   */
+  bindchange() {
 
   }
 })
