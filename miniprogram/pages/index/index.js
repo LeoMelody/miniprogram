@@ -12,6 +12,7 @@ SPage({
     requestResult: '',
     collapse: false,
     collapseTimer: null,
+    // testdata
     list: [
       {
         name: '春'
@@ -25,7 +26,8 @@ SPage({
       {
         name: '冬'
       }
-    ]
+    ],
+    
   },
 
   clickButton() {

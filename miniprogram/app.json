@@ -20,9 +20,9 @@
     "list": [
       {
         "pagePath": "pages/index/index",
-        "text": "喜欢",
-        "iconPath": "/assets/images/favorite_dis.png",
-        "selectedIconPath": "/assets/images/favorite_choose.png"
+        "text": "首页",
+        "iconPath": "/assets/images/home_dis.png",
+        "selectedIconPath": "/assets/images/home_choose.png"
       },
       {
         "pagePath": "pages/classification/index",
@@ -37,5 +37,8 @@
         "selectedIconPath": "/assets/images/combination_choose.png"
       }
     ]
+  },
+  "usingComponents": {
+    "b-menu": "/components/menu/index"
   }
 }
