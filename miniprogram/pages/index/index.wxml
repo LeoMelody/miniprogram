@@ -6,27 +6,24 @@
   <!-- <button id="userBtn" type="primary" lang="zh_CN" bindclick="clickButton" bindtouchstart="touchS" bindtouchmove="touchM" bindtouchend="touchE" style="{{'left:' + moveL + 'px;top:' + moveT + 'px;'}}"> -->
   <view class="fixed-area">
     <view class="op-area {{collapse ? 'op-area_collapse' : ''}}">
-      <view class="op-area_content {{collapse ? 'op-area_content-show' : 'op-area_content-hide'}}">
-        <view class="op-title">亲爱的索菲娅小姐姐:</view>
-        <view class="op-item">
-          你是想要在衣橱中放新东西吗？
-          <view class="click-here" bindtap="addClothes">点击这里>></view>
-        </view>
-        <view class="op-item">
-          你是想要添加新的衣服组合吗？
-          <view class="click-here" bindtap="addCombinations">点击这里>></view>
-        </view>
-      </view>
+      <text bindtap="goUpload" class='op-item iconfont icon-clothes'></text>
+      <text bindtap="goCombination" class='op-item iconfont icon-clothes_com'></text>
     </view>
     <button id="userBtn" type="primary" lang="zh_CN" bindtap="clickButton" class="{{collapse ? 'rotate-btn' : ''}}">
       <view class="add-item"></view>
       <view class="add-item rotate-item"></view>
     </button>
   </view>
-  <swiper class='swiper' indicator-color='#a39f99' indicator-active-color="#f49641" interval="2000" duration="1000" previous-margin="30px" next-margin="30px" circular bindchange="bindchange">
-    <block wx:for="{{list}}" wx:key="{{index}}">
+  <view class="search-wrap">
+    <text class="iconfont icon-search"></text>
+    <input placeholder="智能查找" class="search-input" confirm-type="search" bindconfirm="search"></input>
+  </view>
+  <swiper class='swiper' indicator-color='#a39f99' indicator-active-color="#f49641" autoplay interval="3000" duration="1000" previous-margin="30px" next-margin="30px" circular bindchange="bindchange">
+    <block wx:for="{{seasons}}" wx:key="{{index}}">
       <swiper-item>
-        <view class="slide-item {{swiperIndex === index ? 'active':'quiet'}}">{{item.name}}</view>
+        <view class="slide-item slide-{{item}} {{swiperIndex === index ? 'active':'quiet'}}" bindtap="chooseSeason" data-season='{{item}}'>
+          <image src='/assets/images/{{item}}.jpg' mode="aspectFill" lazy-load></image>
+        </view>
       </swiper-item>
     </block>
   </swiper>

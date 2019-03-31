@@ -7,10 +7,11 @@
   display: flex;
   align-items: center;
 }
-
-.menu-icon {
+.menu .menu-icon {
   width: 50rpx;
   height: 50rpx;
+  padding-right: 20rpx;
+  padding-bottom: 20rpx;
 }
 
 .slide-menu {
@@ -99,3 +100,4 @@
   -webkit-filter: sepia(1) hue-rotate(290deg);
   filter: sepia(1) hue-rotate(290deg);
 }
+

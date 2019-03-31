@@ -14,7 +14,7 @@ Component({
    * 组件的初始数据
    */
   data: {
-    shwo_slide_menu: true,
+    shwo_slide_menu: false,
     // 控制动画
     slide_close_flag: false
   },

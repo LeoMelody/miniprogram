@@ -1,1 +1,11 @@
 /* pages/core/upload/index.wxss */
+.title {
+  height: 110rpx;
+  background: linear-gradient(to left,rgba(199, 199, 231, 0.7), rgba(103, 216, 144, 0.7) 50%, rgba(246, 236, 224, .7));
+  color: #fff;
+  font-size: 32rpx;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 10rpx;
+}

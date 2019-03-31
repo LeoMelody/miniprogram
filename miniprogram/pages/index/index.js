@@ -13,20 +13,7 @@ SPage({
     collapse: false,
     collapseTimer: null,
     // testdata
-    list: [
-      {
-        name: '春'
-      },
-      {
-        name: '夏'
-      },
-      {
-        name: '秋'
-      },
-      {
-        name: '冬'
-      }
-    ],
+    seasons: ['spring', 'summer', 'autumn', 'winter'],
     
   },
 
@@ -72,5 +59,42 @@ SPage({
    */
   bindchange() {
 
+  },
+
+  /**
+   *  选择季节
+  */
+  chooseSeason(e) {
+    let season = ''
+    try {
+      season = e.currentTarget.dataset.season 
+    } catch(err) {
+      season = 'spring'
+    }
+    wx.navigateTo({
+      url: `/pages/search/index?season=${season}`,
+    })
+  },
+
+  /**
+   * 只能搜索
+   */
+  search(e) {
+    let value = e.detail.value
+  },
+
+  /**
+   * 上传衣物图片
+   */
+  goUpload(e) {
+    let uploadType = ''
+    try {
+      uploadType = e.currentTarget.dataset.type
+    } catch(err) {
+      uploadType = 'clothes'
+    }
+    wx.navigateTo({
+      url: `/pages/core/upload/index?type=${uploadType}`
+    })
   }
 })

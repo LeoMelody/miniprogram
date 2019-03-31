@@ -1,9 +1,7 @@
 .fixed-area {
   position: fixed;
   right: 20rpx;
-  bottom: 120rpx;
-  width: 200px;
-  height: 200px;
+  top: 460rpx;
   z-index: 998;
 }
 
@@ -46,52 +44,40 @@
 
 .op-area {
   position: absolute;
-  bottom: 50rpx;
-  right: 50rpx;
-  width: 10px;
-  height: 10px;
-  background: rgba(47, 47, 47, 0.3);
-  transition: all ease 1s;
-  border-radius: 10rpx;
+  width: 300rpx;
+  height: 300rpx;
+  bottom: -100rpx;
+  right: -100rpx;
+  border-radius: 50%;
+  background: rgb(148, 247, 116);
+  transition: all ease .5s;
   font-size: 28rpx;
   color: #fff;
+  /* -webkit-clip-path: polygon(0 0, 50% 0, 50% 100%, 0% 100%);
+  clip-path: polygon(0 0, 50% 0, 50% 100%, 0% 100%); */
+  transform: scale(.1);
 }
 
 .op-area_collapse {
-  width: 420rpx;
-  height: 600rpx;
-  padding: 20rpx;
+  transform: scale(1);  
 }
 
-.op-area .op-item {
-  padding: 20rpx 0;
-  font-size: 26rpx;
+.op-item {
+  font-size: 48rpx;
+  position: absolute;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  width: 100rpx;
+  text-align: center;
 }
 
-.op-area_content {
-  opacity: 0;
+.icon-clothes {
+ top: 30rpx;
 }
 
-.op-area_content-show {
-  animation: showtext 1.5s linear forwards;
-}
-
-.click-here {
-  color: rgba(10, 187, 7, 0.8);
-}
-
-@keyframes showtext {
-  0% {
-    opacity: 0;
-  }
-
-  66% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
+.icon-clothes_com {
+  bottom: 30rpx;
 }
 
 /* head */
@@ -104,9 +90,17 @@
   width: 100%;
   height: 450rpx;
   line-height: 450rpx;
-  background: rgba(218, 97, 139, .6);
   border-radius: 10px;
   position: relative;
+  background: #f6ece0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slide-item image {
+  width: 375rpx;
+  height: 275rpx;
 }
 
 .active {
@@ -124,4 +118,25 @@
   height: 600rpx;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 60%);
   color: #fff;
+}
+/** search-icon **/
+.search-wrap {
+  position: absolute;
+  top: 500rpx;
+  left: 20rpx;
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  width: 320rpx;
+  height: 70rpx;
+  border: 1px solid #e5e5e5;
+  border-radius: 35rpx;
+  padding: 0 20rpx;
+  font-size: 28rpx;
+}
+
+.search-wrap .icon-search {
+  color: #888;
+  margin-right: 20rpx;
+  font-size: 32rpx;
 }

@@ -35,3 +35,34 @@
   84% {transform: translate3d(0,15rpx,0) rotate(15deg); }
   100% {transform: translate3d(0,20rpx,0) rotate(-15deg); }
 }
+
+
+/** font-icon **/
+@font-face {
+  font-family: 'iconfont';  /* project id 1104872 */
+  src: url('//at.alicdn.com/t/font_1104872_8qkfdsed86q.eot');
+  src: url('//at.alicdn.com/t/font_1104872_8qkfdsed86q.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_1104872_8qkfdsed86q.woff2') format('woff2'),
+  url('//at.alicdn.com/t/font_1104872_8qkfdsed86q.woff') format('woff'),
+  url('//at.alicdn.com/t/font_1104872_8qkfdsed86q.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_1104872_8qkfdsed86q.svg#iconfont') format('svg');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.iconfont.icon-search::before {
+  content: '\e601';
+}
+
+.iconfont.icon-clothes::before {
+  content: '\e631';
+}
+
+.iconfont.icon-clothes_com::before {
+  content: '\e783';
+}

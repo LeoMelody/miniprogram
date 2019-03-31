@@ -3,8 +3,12 @@
     "pages/common/welcome/index",
     "pages/index/index",
     "pages/core/upload/index",
+    "pages/func/favorite/index",
+    "pages/func/collection/index",
+    "pages/func/history/index",
     "pages/combination/index",
-    "pages/classification/index"
+    "pages/classification/index",
+    "pages/search/index"
   ],
   "window": {
     "navigationBarBackgroundColor": "#39b54a",
@@ -39,6 +43,7 @@
     ]
   },
   "usingComponents": {
-    "b-menu": "/components/menu/index"
+    "b-menu": "/components/menu/index",
+    "b-cell": "/components/cell/index"
   }
 }

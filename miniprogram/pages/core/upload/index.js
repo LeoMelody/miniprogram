@@ -1,16 +1,19 @@
 // pages/core/upload/index.js
+const app = getApp();
+import SPage from '../../../util/minxin.js'
 import regeneratorRuntime from '../../../libs/runtime.js'
 // 初始化数据库
 const db = wx.cloud.database()
 
-Page({
+SPage({
 
   /**
    * 页面的初始数据
    */
   data: {
-
-  },
+    title: '开始上传图片吧',
+    uploadType: 'clothes'
+  },  
 
   chooseImg() {
     wx.chooseImage({
@@ -60,5 +63,16 @@ Page({
         })
       }
     })
+  },
+
+  /**
+   * 获取数据
+   */
+  getData() {
+    // 设置当前上传类型
+    let uploadType = this.data.options.type
+    uploadType && this.setData({
+      uploadType
+    })  
   }
 })

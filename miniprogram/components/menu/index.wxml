@@ -1,28 +1,27 @@
 <view class="menu">
-    <image src="/assets/images/home-menu.png" mode="aspectFill" class="menu-icon" bindtap="showSlideMenu"></image>
-    <text style="padding-left: 50rpx; color: #666;">写点什么呢</text>
-  </view>
-  <view class="slide-menu" bindtap="closeSlideMenu" wx:if="{{shwo_slide_menu}}">
-    <view class="menu-wrap {{slide_close_flag ? 'menu-close' : ''}}" catchtap='preventTap'>
-      <view class='menu-head logo'>
-        <open-data class="logo-img" type="userAvatarUrl"></open-data>
-      </view>
-      <view class="cut-off"></view>
-      <view class="menu-item {{indicate === 'index' ? 'active-menu' : ''}}">
-        <image src="/assets/images/home_dis.png" class='menu-icon' mode="aspectFill"></image>
-        首页
-      </view>
-      <view class="menu-item {{indicate === 'favorite' ? 'active-menu' : ''}}">
-        <image src="/assets/images/favorite_dis.png" class='menu-icon' mode="aspectFill"></image>
-        特别喜欢
-      </view>
-       <view class="menu-item {{indicate === 'collection' ? 'active-menu' : ''}}">
-        <image src="/assets/images/home_dis.png" class='menu-icon' mode="aspectFill"></image>
-        我的收藏
-      </view>
-       <view class="menu-item {{indicate === 'history' ? 'active-menu' : ''}}">
-        <image src="/assets/images/home_dis.png" class='menu-icon' mode="aspectFill"></image>
-        历史记录
-      </view>
+  <image src="/assets/images/home-menu.png" mode="aspectFill" class="menu-icon" bindtap="showSlideMenu"></image>
+</view>
+<view class="slide-menu" bindtap="closeSlideMenu" wx:if="{{shwo_slide_menu}}">
+  <view class="menu-wrap {{slide_close_flag ? 'menu-close' : ''}}" catchtap='preventTap'>
+    <view class='menu-head logo'>
+      <open-data class="logo-img" type="userAvatarUrl"></open-data>
+    </view>
+    <view class="cut-off"></view>
+    <view class="menu-item {{indicate === 'index' ? 'active-menu' : ''}}">
+      <image src="/assets/images/home_dis.png" class='menu-icon' mode="aspectFill"></image>
+      首页
+    </view>
+    <view class="menu-item {{indicate === 'favorite' ? 'active-menu' : ''}}">
+      <image src="/assets/images/favorite.png" class='menu-icon' mode="aspectFill"></image>
+      特别喜欢
+    </view>
+    <view class="menu-item {{indicate === 'collection' ? 'active-menu' : ''}}">
+      <image src="/assets/images/star.png" class='menu-icon' mode="aspectFill"></image>
+      我的收藏
+    </view>
+    <view class="menu-item {{indicate === 'history' ? 'active-menu' : ''}}">
+      <image src="/assets/images/history.png" class='menu-icon' mode="aspectFill"></image>
+      历史记录
     </view>
   </view>
+</view>
