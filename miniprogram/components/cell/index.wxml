@@ -1,6 +1,6 @@
 <!-- cell组件 -->
 <view class="dd-cell self-class" bindtap="linkEventAll"  data-path="{{path}}">
-  <view class="dd-cell_label label-class" wx:if="{{showLabel}}">{{label}}</view>
+  <view class="dd-cell_label label-class {{must&&'dd-label_must'}}" wx:if="{{showLabel}}">{{label}}</view>
   <slot wx:else name="label"></slot>
   <view class="dd-cell_content content-class" wx:if="{{showValue}}"
     bindtap="linkEventHalf" data-path="{{path}}">

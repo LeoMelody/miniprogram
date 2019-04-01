@@ -9,6 +9,7 @@
   background: #fff;
   align-items: center;
   justify-content: space-between;
+  font-size: 28rpx;
 }
 
 .dd-cell_label {
@@ -33,4 +34,15 @@
 
 .collapse-arrow {
   transform: rotate(90deg);
+}
+
+.dd-label_must {
+  position: relative;
+}
+
+.dd-label_must::before {
+  position: absolute;
+  left: -20rpx;
+  content: '*';
+  color: #f34e4e;
 }

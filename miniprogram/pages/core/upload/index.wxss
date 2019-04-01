@@ -9,3 +9,104 @@
   justify-content: center;
   padding-bottom: 10rpx;
 }
+
+/* form */
+.form-wrap {
+  border-top: 1px solid #e5e5e5;
+  border-bottom: 1px solid #e5e5e5;
+  padding: 0 20rpx;
+}
+
+.cell-input {
+  text-align: right;
+}
+
+.gray-val {
+  color: #888;
+}
+
+.cell-value {
+  display: inline-block;
+}
+
+.icon-arrow-right {
+  display: inline-block;
+  transform: scale(1.5);
+  color: #888;
+}
+/* upload */
+.u-content {
+  padding: 20rpx 20rpx 30rpx;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.up-header {
+  font-size: 32rpx;
+  color: #666;
+  height: 42rpx;
+  line-height: 42rpx;
+  margin: 20rpx;
+  padding-left: 20rpx;
+  position: relative;
+}
+
+.up-header::before {
+  position: absolute;
+  content: '';
+  width: 10rpx;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(103, 216, 144, 1);
+}
+
+.up-btn {
+  width: 100rpx;
+  height: 100rpx;
+  padding: 30rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 1px solid #B2B2B2;
+}
+
+
+.up-add {
+  height: 1px;
+  background: #B2B2B2; 
+}
+
+.rotate90 {
+  transform: rotate(90deg);
+}
+
+
+.clear-icon {
+  position: absolute;
+  right: 10rpx;
+  top: -10rpx;
+}
+
+.img-item {
+  margin: 0;
+  padding-right: 20rpx;
+  width: 160rpx;
+  height: 160rpx;
+}
+
+.last-img {
+  margin: 0;
+  padding: 0;
+}
+
+.last-icon {
+  right: -20rpx;
+}
+
+/* submit-btn */
+.btn-wrap {
+  margin: 40rpx auto;
+  width: 560rpx;
+}

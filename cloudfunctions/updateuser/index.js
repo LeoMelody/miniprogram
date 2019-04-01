@@ -7,7 +7,6 @@ const db = cloud.database()
 const userCollection = db.collection('user')
 // 云函数入口函数
 exports.main = async(event, context) => {
-  console.log('?', event)
   let openid = event.openid
   let info = event.info || {}
   let result = await userCollection.where({

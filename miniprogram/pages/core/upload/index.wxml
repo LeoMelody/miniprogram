@@ -1,2 +1,44 @@
 <!--pages/core/upload/index.wxml-->
 <view class='title'>{{title}}</view>
+<view class="up-header">图片信息</view>
+<view class="form-wrap">
+  <b-cell label="选择季节" showValue="{{false}}" must>
+    <view slot="value">
+      <picker bindchange="chooseSeanson" range="{{seasonList}}" range-key="label" class="picker-view">
+        <view class="cell-value" wx:if="{{season.value}}">{{season.label}}</view>
+        <block wx:else>
+          <view class="cell-value gray-val">哪个季节的</view>
+          <text class="iconfont icon-arrow-right"></text>
+        </block>
+      </picker>
+    </view>
+  </b-cell>
+  <b-cell label="衣服名称" showValue="{{false}}" must>
+    <input class="cell-input" placeholder="起个名字吧" slot="value" bindinput="formItemInput" data-type="name"></input>
+  </b-cell>
+  <b-cell label="衣服类型" showValue="{{false}}" must>
+    <input class="cell-input" placeholder="什么类型呢" slot="value" bindinput="formItemInput" data-type="clothesType"></input>
+  </b-cell>
+  <b-cell label="价格(¥)" showValue="{{false}}" must>
+    <input class="cell-input" placeholder="多钱买的呢" slot="value" bindinput="formItemInput" data-type="price" type="digit"></input>
+  </b-cell>
+  <b-cell label="衣服描述" showValue="{{false}}" self-class="no-border">
+    <input class="cell-input" placeholder="描述一下吧" slot="value" bindinput="formItemInput" data-type="description"></input>
+  </b-cell>
+</view>
+
+<view class="up-header">上传衣物图片</view>
+<view class="u-content">
+  <view wx:for="{{imgList}}" wx:key="{{item}}" style="position:relative;">
+    <icon type="clear" class="clear-icon  {{(index+1)%4 == 0 ? 'last-icon' :''}}" bindtap="clearImg" data-index="{{index}}" color="rgba(0,0,0,.7)"></icon>
+    <image src="{{item}}" class="img-item {{(index+1)%4 == 0 ? 'last-img': ''}}" bindtap="previewImg" data-index="{{index}}"></image>
+  </view>
+  <view class="up-btn" bindtap="chooseImg" id='upload'>
+    <view class="up-add"></view>
+    <view class="up-add rotate90"></view>
+  </view>
+</view>
+
+<view class="btn-wrap">
+  <button class="submit-btn" type="primary" disabled="{{!imgList.length}}" bindtap="startUpload">提交</button>
+</view>

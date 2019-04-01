@@ -34,6 +34,10 @@ DDComponent({
       type: Boolean,
       value: false
     },
+    must: {
+      type: Boolean,
+      value: false
+    },
     /**
      * 事件触发区域，一半 half  全部 all
      */
