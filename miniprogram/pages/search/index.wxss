@@ -7,3 +7,45 @@
   height: 100vh;
   width: 100vw;
 }
+
+
+/* list-wrap */
+.clothes {
+  padding: 20rpx;
+  font-size: 28rpx;
+  color: #888;
+  position: relative;
+  margin-bottom: 20rpx;
+  background: #fff;
+}
+
+.clothes_wrap .clothes_title {
+  font-size: 32rpx;
+  color: #333;
+  padding-bottom: 10rpx;
+}
+
+.clothes_wrap .clothes_title .price_text {
+  color: #f18f01;
+  font-size: 26rpx;
+  padding-left: 10rpx;
+}
+
+.clothes_wrap .clothes_tag {
+  position: absolute;
+  right: 40rpx;
+  top: 20rpx;
+  padding: 10rpx 20rpx;
+  border: 1px solid #f18f01;
+  color: #f18f01;
+  border-radius: 4rpx;
+}
+
+.clothes_wrap .clothes_pictures {
+  padding-top: 10rpx;
+}
+
+.clothes_pictures .clothes_pic_item {
+  width: 275rpx;
+  margin-right: 20rpx;
+}

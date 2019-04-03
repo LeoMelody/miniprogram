@@ -119,7 +119,7 @@ App({
    * 公共方法
    */
   async getDics(list = []) {
-    let page = getCurrentPages()[0]
+    let page = [...getCurrentPages()].pop()
     await Promise.all(list.map(async dic => {
       let obj = {}
       if (!wx.getStorageSync(dic)) {

@@ -81,6 +81,9 @@ SPage({
    */
   search(e) {
     let value = e.detail.value
+    wx.navigateTo({
+      url: `/pages/search/index?searchStr=${value}`,
+    })
   },
 
   /**

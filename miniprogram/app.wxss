@@ -1,4 +1,8 @@
 /**app.wxss**/
+page {
+  background-color: #efeff4;
+}
+
 .title.page-title {
   height: 110rpx;
   background: linear-gradient(to left,rgba(199, 199, 231, 0.7), rgba(103, 216, 144, 0.7) 50%, rgba(246, 236, 224, .7));

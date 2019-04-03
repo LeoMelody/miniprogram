@@ -11,16 +11,20 @@ SPage({
   data: {
     season: {},
     hasSearch: false,
-
+    seasonList: [],
+    clothesList: [],
+    combinationList: []
   },
 
   async getData() {
     let options = this.data.options
     await app.getDics(['season'])
-    let season = this.data.seasonList.find(item => item.value === options.season)
-    this.setData({
-      season
-    })
+    if (options.season) {
+      let season = this.data.seasonList.find(item => item.value === options.season)
+      this.setData({
+        season
+      })
+    }
     await this.getSearchList()
     this.setData({
       hasSearch: true
@@ -37,6 +41,17 @@ SPage({
     } else {
       data.searchStr = this.data.options.searchStr
     }
-    
+    console.log(data)
+    let res = await wx.cloud.callFunction({
+      name: 'intelligenceSearch',
+      data: data
+    })
+    console.log(res)
+    let clothesList = res.result.data.clothesList || []
+    let combinationList = res.result.data.combinationList || []
+    this.setData({
+      clothesList,
+      combinationList
+    })
   }
 })
