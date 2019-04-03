@@ -74,24 +74,7 @@ SPage({
     uploadType && this.setData({
       uploadType
     })
-    this.getDics(['season'])  
-  },
-
-  /**
-   * 获取字典
-   */
-  async getDics(list = []) {
-    await Promise.all(list.map(async dic => {
-      let data = await wx.cloud.callFunction({
-        name: 'getDic',
-        data: {
-          dic
-        }
-      })
-      let obj = {}
-      obj[`${dic}List`] = data.result.data
-      this.setData(obj)
-    }))
+    app.getDics(['season'])  
   },
 
   /**

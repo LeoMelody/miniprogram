@@ -9,43 +9,34 @@ SPage({
    * 页面的初始数据
    */
   data: {
-    season: {}
+    season: {},
+    hasSearch: false,
+
   },
 
   async getData() {
     let options = this.data.options
-    await this.getDics(['season'])
+    await app.getDics(['season'])
     let season = this.data.seasonList.find(item => item.value === options.season)
     this.setData({
       season
     })
     await this.getSearchList()
-  },
-
-  /**
-   * 获取字典
-   */
-  async getDics(list = []) {
-
-    // 是否可以优化一下？
-    await Promise.all(list.map(async dic => {
-      let data = await wx.cloud.callFunction({
-        name: 'getDic',
-        data: {
-          dic
-        }
-      })
-      let obj = {}
-      this.setData({
-        seasonList: data.result.data
-      })
-    }))
+    this.setData({
+      hasSearch: true
+    })
   },
 
   /**
    * 获取搜索列表
    */
-  getSearchList() {
-
+  async getSearchList() {
+    let data = {}
+    if (this.data.season && this.data.season.value) {
+      data.season = this.data.season.value
+    } else {
+      data.searchStr = this.data.options.searchStr
+    }
+    
   }
 })

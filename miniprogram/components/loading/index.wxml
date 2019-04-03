@@ -1,0 +1,8 @@
+<view class='loading loading1' wx:if="{{type == 1}}">
+  <text></text>
+  <text></text>
+  <text></text>
+  <text></text>
+  <text></text>
+  <text></text>
+</view>

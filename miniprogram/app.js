@@ -113,5 +113,26 @@ App({
   /**
    * 公共数据
    */
-  globalData: {}
+  globalData: {},
+
+  /**
+   * 公共方法
+   */
+  async getDics(list = []) {
+    let page = getCurrentPages()[0]
+    await Promise.all(list.map(async dic => {
+      let obj = {}
+      if (!wx.getStorageSync(dic)) {
+        let data = await wx.cloud.callFunction({
+          name: 'getDic',
+          data: {
+            dic
+          }
+        })
+        wx.setStorageSync(dic, data.result.data)
+      }
+      obj[`${dic}List`] = wx.getStorageSync(dic)
+      page.setData(obj)
+    }))
+  }
 })

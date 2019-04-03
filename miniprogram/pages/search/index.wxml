@@ -1,13 +1,18 @@
 <!--pages/search/index.wxml-->
 <view class='title page-title'>很智能的哦</view>
-<view wx:if="{{searchList && searchList.length}}" class="search-wrap">
+<view class="" wx:if="{{hasSearch}}">
+  <view wx:if="{{searchList && searchList.length}}" class="search-wrap">
+    <view wx:if="{{season.value}}">
+      为您生成{{season.label}}季宜穿服装
+    </view>
+    <view class='' wx:else>
+      为您找到下面这些：
+    </view>
+  </view>
+  <view class="no-result" wx:else>
 
+  </view>
 </view>
-<view class="" wx:else>
-  <view wx:if="{{season.value}}">
-    正在为您生成{{season.label}}季服装
-  </view>
-  <view wx:else>
-    加载中...
-  </view>
+<view wx:else class="no-search">
+  <b-loading />
 </view>
