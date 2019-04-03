@@ -3,6 +3,7 @@
     "pages/common/welcome/index",
     "pages/index/index",
     "pages/core/upload/index",
+    "pages/core/uploadSuccess/index",
     "pages/func/favorite/index",
     "pages/func/collection/index",
     "pages/func/history/index",

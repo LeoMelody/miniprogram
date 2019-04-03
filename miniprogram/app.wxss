@@ -1,6 +1,6 @@
 /**app.wxss**/
 page {
-  background-color: #efeff4;
+  background: rgba(248,248,248, 1);
 }
 
 .title.page-title {

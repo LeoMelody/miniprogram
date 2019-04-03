@@ -150,6 +150,11 @@ SPage({
     wx.showToast({
       title: '添加成功'
     })
+    setTimeout(() => {
+      wx.redirectTo({
+        url: `/pages/core/uploadSuccess/index`,
+      })
+    }, 1000)
   }
 
   /**

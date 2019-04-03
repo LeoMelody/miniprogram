@@ -1,0 +1,11 @@
+<!--pages/core/uploadSuccess/index.wxml-->
+<view class="container">
+  <image src='https://cdn.ddjf.com.cn/static/images/miniprogram/yundai/success.png' class='success-img'></image>
+  <view class="text-wrap">
+    <view class="text-head">添加成功</view>
+  </view>
+  <view class="btn-wrap">
+    <button bindtap="goHome" class='btn-item'>返回首页</button>
+    <button bindtap="uploadAgain" type='primary' class='btn-item'>继续添加</button>
+  </view>
+</view>

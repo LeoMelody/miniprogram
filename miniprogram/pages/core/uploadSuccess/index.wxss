@@ -1,0 +1,44 @@
+/* pages/core/uploadSuccess/index.wxss */
+.container {
+  height: 100vh;
+  background: #fff;
+  justify-content: flex-start;
+}
+
+.success-img {
+  width: 186rpx;
+  height: 186rpx;
+  margin-top: 110rpx;
+}
+
+.text-wrap {
+  margin-top: 50rpx;
+  margin-bottom: 80rpx;
+}
+
+.text-head {
+  text-align: center;
+  font-size: 40rpx;
+  color: #000000;
+  line-height: 56rpx;
+  margin-bottom: 20rpx;  
+}
+
+.text-content {
+  margin: 0 115rpx;
+  line-height: 40rpx;
+  font-size: 28rpx;
+  color: #888888;
+}
+
+.btn-wrap {
+  align-self: stretch;
+  padding: 0 35rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.btn-item {
+  width: 320rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+}
