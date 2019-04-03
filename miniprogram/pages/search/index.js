@@ -9,62 +9,43 @@ SPage({
    * 页面的初始数据
    */
   data: {
+    season: {}
+  },
 
+  async getData() {
+    let options = this.data.options
+    await this.getDics(['season'])
+    let season = this.data.seasonList.find(item => item.value === options.season)
+    this.setData({
+      season
+    })
+    await this.getSearchList()
   },
 
   /**
-   * 生命周期函数--监听页面加载
+   * 获取字典
    */
-  onLoad: function (options) {
+  async getDics(list = []) {
 
+    // 是否可以优化一下？
+    await Promise.all(list.map(async dic => {
+      let data = await wx.cloud.callFunction({
+        name: 'getDic',
+        data: {
+          dic
+        }
+      })
+      let obj = {}
+      this.setData({
+        seasonList: data.result.data
+      })
+    }))
   },
 
   /**
-   * 生命周期函数--监听页面初次渲染完成
+   * 获取搜索列表
    */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
+  getSearchList() {
 
   }
 })

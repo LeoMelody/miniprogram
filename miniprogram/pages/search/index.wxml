@@ -1,2 +1,13 @@
 <!--pages/search/index.wxml-->
-<text>搜索页面</text>
+<view class='title page-title'>很智能的哦</view>
+<view wx:if="{{searchList && searchList.length}}" class="search-wrap">
+
+</view>
+<view class="" wx:else>
+  <view wx:if="{{season.value}}">
+    正在为您生成{{season.label}}季服装
+  </view>
+  <view wx:else>
+    加载中...
+  </view>
+</view>
