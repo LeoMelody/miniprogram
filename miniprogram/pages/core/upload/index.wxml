@@ -1,8 +1,6 @@
 <!--pages/core/upload/index.wxml-->
-<view class='title page-title'>{{title}}</view>
+<b-header>{{title}}</b-header>
 <view class="content">
-
-
   <view class="up-header">图片信息</view>
   <view class="form-wrap">
     <b-cell label="选择季节" showValue="{{false}}" must>

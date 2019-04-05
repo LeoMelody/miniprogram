@@ -1,16 +1,18 @@
 <!--pages/search/index.wxml-->
-<view class='title page-title'>很智能的哦</view>
+<b-header>很智能的哦</b-header>
 <view class="" wx:if="{{hasSearch}}">
-  <view class="clothes clothes_wrap" wx:for="{{clothesList}}" wx:for-item="clothes" wx:key="{{clothes._id}}">
+  <view class="clothes clothes_wrap" wx:for="{{clothesList}}" wx:for-item="clothes" wx:for-index="clothes_index" wx:key="{{clothes._id}}">
     <view class="clothes_title">
-      {{clothes.name}} <text class="price_text">{{clothes.price}}</text>  
+      {{clothes.name}} <text class="price_text">¥{{clothes.price}}</text>  
     </view>
     <view class="clothes_des">{{clothes.description}}</view>
     <view class="clothes_tag">
       <text class="tag_text">{{clothes.type}}</text>
     </view>
-    <view class="clothes_pictures" wx:for="{{clothes.pictures}}" wx:key="{{index}}">
-      <image src="{{item}}" mode="aspectFit" class="clothes_pic_item"></image>
+    <view class="clothes_pictures">
+      <block wx:for="{{clothes.pictures}}" wx:key="{{index}}">
+        <image src="{{item}}" mode="aspectFill" class="clothes_pic_item" bindtap="preview" data-index="{{index}}" data-pic="{{clothes_index}}" data-type="clothes"></image>
+      </block>
     </view>
   </view>
 </view>

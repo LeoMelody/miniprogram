@@ -1,4 +1,5 @@
 <!--pages/core/uploadSuccess/index.wxml-->
+<b-header>成功</b-header>
 <view class="container">
   <image src='https://cdn.ddjf.com.cn/static/images/miniprogram/yundai/success.png' class='success-img'></image>
   <view class="text-wrap">

@@ -1,0 +1,33 @@
+/* components/header/index.wxss */
+.iconfont {
+  font-family: "iconfont" !important;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.iconfont.icon-back::before {
+  content: '\e64c';
+}
+
+
+.title.page-title {
+  height: 110rpx;
+  background: linear-gradient(to left,rgba(199, 199, 231, 0.7), rgba(103, 216, 144, 0.7) 50%, rgba(246, 236, 224, .7));
+  color: #fff;
+  font-size: 32rpx;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 10rpx;
+  position: relative;
+}
+
+.icon-back {
+  color: rgba(47, 47, 47, .6);
+  font-size: 48rpx;
+  position: absolute;
+  left: 0rpx;
+  bottom: 0rpx;
+  padding: 10rpx;
+}

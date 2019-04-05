@@ -1,13 +1,10 @@
-// components/pagehead/index.js
+// components/header/index.js
 Component({
   /**
    * 组件的属性列表
    */
   properties: {
-    title: {
-      type: String,
-      value: '开始上传图片吧'
-    }
+
   },
 
   /**
@@ -21,6 +18,8 @@ Component({
    * 组件的方法列表
    */
   methods: {
-
+    back() {
+      wx.navigateBack({})
+    }
   }
 })

@@ -53,5 +53,20 @@ SPage({
       clothesList,
       combinationList
     })
-  }
+  },
+
+  /**
+   * 预览
+   */
+  preview(e) {
+    let previewUrlIndex = e.currentTarget.dataset.pic
+    let index = e.currentTarget.dataset.index
+    let type = e.currentTarget.dataset.type
+    let urls = this.data[`${type}List`][previewUrlIndex].pictures
+    let current = urls[index]
+    wx.previewImage({
+      urls,
+      current
+    })
+  }   
 })

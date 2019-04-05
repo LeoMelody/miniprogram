@@ -8,14 +8,13 @@
   width: 100vw;
 }
 
-
 /* list-wrap */
 .clothes {
   padding: 20rpx;
   font-size: 28rpx;
   color: #888;
   position: relative;
-  margin-bottom: 20rpx;
+  margin-top: 20rpx;
   background: #fff;
 }
 
@@ -46,6 +45,7 @@
 }
 
 .clothes_pictures .clothes_pic_item {
-  width: 275rpx;
+  width: 200rpx;
+  height: 200rpx;
   margin-right: 20rpx;
 }

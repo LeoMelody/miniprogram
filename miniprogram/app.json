@@ -46,6 +46,7 @@
   "usingComponents": {
     "b-menu": "/components/menu/index",
     "b-cell": "/components/cell/index",
-    "b-loading": "/components/loading/index"
+    "b-loading": "/components/loading/index",
+    "b-header": "/components/header/index"
   }
 }

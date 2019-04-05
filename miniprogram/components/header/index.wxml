@@ -1,0 +1,6 @@
+<!--components/header/index.wxml-->
+<view class="title page-title">
+  <text class="iconfont icon-back" bindtap="back"></text>
+  <slot>
+  </slot>
+</view>
