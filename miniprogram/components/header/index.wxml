@@ -1,6 +1,6 @@
 <!--components/header/index.wxml-->
 <view class="title page-title">
-  <text class="iconfont icon-back" bindtap="back"></text>
+  <text class="iconfont icon-back" bindtap="back" wx:if="{{showBack}}"></text>
   <slot>
   </slot>
 </view>
