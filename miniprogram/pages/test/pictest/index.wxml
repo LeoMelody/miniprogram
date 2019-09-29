@@ -1,0 +1,4 @@
+<!--pages/test/pictest/index.wxml-->
+<!-- <text>pages/test/pictest/index.wxml</text> -->
+
+<image src="{{testPic}}"></image>

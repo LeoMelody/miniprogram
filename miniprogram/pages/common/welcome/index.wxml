@@ -1,13 +1,15 @@
 <!--start.wxml-->
 <view class="container">
-  <view class="head-text">索菲娅小姐姐</view>
+  <!-- <view class="head-text">索菲娅小姐姐</view> -->
+  <view class="head-text">哈哈哈哈哈</view>
   <view class="remind-box" wx:if="{{remind}}">
       <image class="remind-img" src="/assets/images/loading.gif"></image>
   </view>
   <block wx:else>
     <view class="content">
       <view class="hd-text">
-        送你的小衣橱哦
+        <!-- 送你的小衣橱哦 -->
+        哈哈哈哈哈
       </view>
       <view class="hd" style="transform:rotateZ({{angle}}deg);">
         <view class="logo">
